@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html, body { margin:0; padding:0; }
+  img, video, canvas { display:block; max-width:100%; height:auto; }
+  :where(h1,h2,h3,h4,h5,h6){ margin:0; }
+}

@@ -1,0 +1,40 @@
+<header class="relative min-h-screen min-h-[100svh] overflow-hidden">
+    <!-- Video background -->
+    <video
+      class="absolute left-0 top-0 w-full h-full min-w-full min-h-full object-cover object-center block"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-hidden="true"
+    >
+      <source src="{{ '/images/hero.webm' | relative_url }}" type="video/webm" />
+      <!-- Fallback (opsional) -->
+      <!-- <source src="{{ '/images/hero.mp4' | relative_url }}" type="video/mp4" /> -->
+    </video>
+  
+    <div class="absolute inset-0 bg-black/30"></div>
+  
+    <div class="relative max-w-6xl mx-auto h-full px-6 py-10 flex items-center justify-between">
+      <nav aria-label="Primary" class="hidden md:flex gap-3">
+        <a href="#menu" class="inline-flex items-center px-4 py-2 rounded-lg bg-white/90 text-gray-900 font-semibold hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/70">View menu</a>
+        <a href="https://maps.google.com/?q=Vinny's Beach Bar" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400">Get directions</a>
+      </nav>
+      <h1 class="text-[#e8383b] text-right text-4xl md:text-6xl tracking-tight leading-tight">
+        vinny's <span> beach bar </span>
+      </h1>
+    </div>
+  
+    <div class="absolute inset-x-0 bottom-0 md:hidden px-6 pb-8">
+      <div class="flex gap-3">
+        <a href="#menu" class="flex-1 text-center px-4 py-2 rounded-lg bg-white/90 text-gray-900 font-semibold">View menu</a>
+        <a href="https://maps.google.com/?q=Vinny's Beach Bar" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-2 rounded-lg bg-red-600 text-white font-semibold">Get directions</a>
+      </div>
+    </div>
+  
+    <noscript>
+      <div class="absolute inset-0 bg-image bg-headeroption bg-cover bg-center"></div>
+    </noscript>
+  </header>
+  

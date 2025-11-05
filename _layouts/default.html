@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinny's Beach Bar</title>
+
+    {% include head.html %}
+  </head>
+
+  <body>
+    <!-- Page Loader -->
+    <div
+      id="vb-loader"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#F6EDE7] text-[#e8383b]"
+      aria-label="Loading Vinny’s Beach Bar"
+      aria-live="polite"
+    >
+      <!-- VINNY'S — Elegant Line Draw Loader (6.5s total) -->
+      <svg class="vb-logo" viewBox="0 0 1400 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <!-- Grain (match loader look) -->
+          <pattern id="grain" width="3" height="3" patternUnits="userSpaceOnUse">
+            <circle cx="1.5" cy="1.5" r="0.5" fill="rgba(0,0,0,.08)"/>
+          </pattern>
+
+          <!-- Vignette -->
+          <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+            <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,.20)"/>
+          </radialGradient>
+
+          <!-- Glow -->
+          <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="3" result="b1"/>
+            <feGaussianBlur in="b1" stdDeviation="4" result="b2"/>
+            <feMerge>
+              <feMergeNode in="b2"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <!-- Stroke gradient -->
+          <linearGradient id="strokeGrad" x1="0" x2="1">
+            <stop offset="0" stop-color="#e8383b"/>
+            <stop offset="1" stop-color="#ff5a5e"/>
+          </linearGradient>
+
+          <!-- Shimmer sweep -->
+          <linearGradient id="shimmerGrad" x1="0" x2="1">
+            <stop offset="0%"  stop-color="rgba(255,255,255,0)" />
+            <stop offset="45%" stop-color="rgba(255,255,255,.55)"/>
+            <stop offset="55%" stop-color="rgba(255,255,255,.55)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+          </linearGradient>
+          <mask id="shimmerMask">
+            <rect x="-1400" y="0" width="1400" height="560" fill="url(#shimmerGrad)">
+              <!-- menyapu tepat sebelum fade -->
+              <animate attributeName="x" values="-1400; 1400" dur="0.6s" begin="4.6s" fill="freeze"/>
+            </rect>
+          </mask>
+        </defs>
+
+        <!-- (opsional) background SVG — kalau mau, aktifkan 3 baris di bawah -->
+        <!-- <rect width="100%" height="100%" fill="#F6EDE7"/> -->
+        <!-- <rect width="100%" height="100%" fill="url(#grain)" opacity=".25"/> -->
+        <!-- <rect width="100%" height="100%" fill="url(#vignette)"/> -->
+
+        <!-- ====== VINNY'S (atas) — start lambat, durasi 3.4s, mulai 0.2s ====== -->
+        <g filter="url(#glow)">
+          <!-- GLOW stroke -->
+          <text x="70" y="250"
+                style="font: 220px/1 'Monoton', system-ui; letter-spacing:8px;"
+                fill="none" stroke="#e8383b" stroke-width="4"
+                stroke-linejoin="round" stroke-linecap="round"
+                stroke-dasharray="2400" stroke-dashoffset="2400" opacity=".75">
+            VINNY'S
+            <animate attributeName="stroke-dashoffset"
+              values="2400;1200;0"
+              keyTimes="0;0.60;1"
+              dur="3.4s" begin="0.2s"
+              calcMode="spline"
+              keySplines=".20,0,.20,1; .20,0,.20,1"
+              fill="freeze"/>
+          </text>
+
+          <!-- MAIN stroke -->
+          <text x="70" y="250"
+                style="font: 220px/1 'Monoton', system-ui; letter-spacing:8px;"
+                fill="none" stroke="url(#strokeGrad)" stroke-width="1"
+                stroke-linejoin="round" stroke-linecap="round"
+                stroke-dasharray="2400" stroke-dashoffset="2400">
+            VINNY'S
+            <animate attributeName="stroke-dashoffset"
+              values="2400;1200;0"
+              keyTimes="0;0.60;1"
+              dur="3.4s" begin="0.2s"
+              calcMode="spline"
+              keySplines=".20,0,.20,1; .20,0,.20,1"
+              fill="freeze"/>
+          </text>
+        </g>
+
+        <!-- Fill VINNY'S, mulai 3.8s dur 0.6s -->
+        <text x="70" y="250"
+              style="font: 220px/1 'Monoton', system-ui; letter-spacing:8px;"
+              fill="#e8383b" opacity="0">
+          VINNY'S
+          <animate attributeName="opacity" values="0;1" dur="0.6s" begin="3.8s" fill="freeze"/>
+        </text>
+
+        <!-- Shimmer VINNY'S -->
+        <g mask="url(#shimmerMask)">
+          <text x="70" y="250"
+                style="font: 220px/1 'Monoton', system-ui; letter-spacing:8px;"
+                fill="white" opacity=".25">VINNY'S</text>
+        </g>
+
+        <!-- ====== BEACHBAR (bawah) — start lambat, durasi 2.4s, mulai 0.8s ====== -->
+        <g filter="url(#glow)">
+          <!-- GLOW stroke -->
+          <text x="90" y="420"
+                style="font: 140px/1 'Monoton', system-ui; letter-spacing:6px;"
+                fill="none" stroke="#e8383b" stroke-width="1"
+                stroke-linejoin="round" stroke-linecap="round"
+                stroke-dasharray="1600" stroke-dashoffset="1600" opacity=".75">
+            BEACHBAR
+            <animate attributeName="stroke-dashoffset"
+              values="1600;800;0"
+              keyTimes="0;0.60;1"
+              dur="2.4s" begin="0.8s"
+              calcMode="spline"
+              keySplines=".20,0,.20,1; .20,0,.20,1"
+              fill="freeze"/>
+          </text>
+
+          <!-- MAIN stroke -->
+          <text x="90" y="420"
+                style="font: 140px/1 'Monoton', system-ui; letter-spacing:6px;"
+                fill="none" stroke="url(#strokeGrad)" stroke-width="3"
+                stroke-linejoin="round" stroke-linecap="round"
+                stroke-dasharray="1600" stroke-dashoffset="1600">
+            BEACHBAR
+            <animate attributeName="stroke-dashoffset"
+              values="1600;800;0"
+              keyTimes="0;0.60;1"
+              dur="2.4s" begin="0.8s"
+              calcMode="spline"
+              keySplines=".20,0,.20,1; .20,0,.20,1"
+              fill="freeze"/>
+          </text>
+        </g>
+
+        <!-- Fill BEACHBAR, mulai 4.1s dur 0.5s -->
+        <text x="90" y="420"
+              style="font: 140px/1 'Monoton', system-ui; letter-spacing:6px;"
+              fill="#e8383b" opacity="0">
+          BEACHBAR
+          <animate attributeName="opacity" values="0;1" dur="0.5s" begin="4.1s" fill="freeze"/>
+        </text>
+
+        <!-- Shimmer BEACHBAR -->
+        <g mask="url(#shimmerMask)">
+          <text x="90" y="420"
+                style="font: 140px/1 'Monoton', system-ui; letter-spacing:6px;"
+                fill="white" opacity=".22">BEACHBAR</text>
+        </g>
+      </svg>
+    </div>
+
+    {{ content }}
+
+    <script src="https://unpkg.com/gsap@3.12.1/dist/gsap.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="/main.js"></script>
