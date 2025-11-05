@@ -1,0 +1,113 @@
+<!-- RESERVE (responsive) -->
+<section id="reserve" class="py-16 bg-[#f6efe7] overflow-x-clip">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-[#e8383b] mb-4 text-center">reserve a table.</h2>
+      <p class="text-center text-[#682616] opacity-80 mb-8">
+        Walk-ins welcome. For groups & events, book ahead.
+      </p>
+  
+      <form id="reserveForm"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-white/70 rounded-2xl p-4 sm:p-6 shadow">
+  
+        <!-- Name -->
+        <div class="sm:col-span-1 min-w-0">
+          <label class="block text-sm font-medium mb-1" for="r-name">Name</label>
+          <input id="r-name" name="name" type="text" autocomplete="name" required
+                 class="w-full rounded-xl border border-gray-300 px-3 py-2 h-11 focus:outline-none focus:ring-2 focus:ring-[#e8383b]">
+        </div>
+  
+        <!-- Phone -->
+        <div class="sm:col-span-1 min-w-0">
+          <label class="block text-sm font-medium mb-1" for="r-phone">Phone</label>
+          <input id="r-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required
+                 class="w-full rounded-xl border border-gray-300 px-3 py-2 h-11 focus:outline-none focus:ring-2 focus:ring-[#e8383b]">
+        </div>
+  
+        <!-- Date -->
+        <div class="sm:col-span-1 min-w-0">
+          <label class="block text-sm font-medium mb-1" for="r-date">Date</label>
+          <input id="r-date" name="date" type="date" required
+                 class="w-full rounded-xl border border-gray-300 px-3 py-2 h-11 focus:outline-none focus:ring-2 focus:ring-[#e8383b]">
+        </div>
+  
+        <!-- Time -->
+        <div class="sm:col-span-1 min-w-0">
+          <label class="block text-sm font-medium mb-1" for="r-time">Time</label>
+          <input id="r-time" name="time" type="time" required
+                 class="w-full rounded-xl border border-gray-300 px-3 py-2 h-11 focus:outline-none focus:ring-2 focus:ring-[#e8383b]">
+        </div>
+  
+        <!-- Party size -->
+        <div class="sm:col-span-1 min-w-0">
+          <label class="block text-sm font-medium mb-1" for="r-size">Party size</label>
+          <select id="r-size" name="size"
+                  class="w-full rounded-xl border border-gray-300 px-3 py-2 h-11 focus:outline-none focus:ring-2 focus:ring-[#e8383b]">
+            <option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8+</option>
+          </select>
+        </div>
+  
+        <!-- Occasion -->
+        <div class="sm:col-span-1 min-w-0">
+          <label class="block text-sm font-medium mb-1" for="r-occasion">Occasion (optional)</label>
+          <input id="r-occasion" name="occasion" type="text" placeholder="birthday, reunion, etc."
+                 class="w-full rounded-xl border border-gray-300 px-3 py-2 h-11 focus:outline-none focus:ring-2 focus:ring-[#e8383b]">
+        </div>
+  
+        <!-- Notes (full width) -->
+        <div class="sm:col-span-2 min-w-0">
+          <label class="block text-sm font-medium mb-1" for="r-notes">Notes</label>
+          <textarea id="r-notes" name="notes" rows="3"
+                    class="w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#e8383b]"></textarea>
+        </div>
+  
+        <!-- Actions -->
+        <div class="sm:col-span-2 flex flex-col sm:flex-row flex-wrap justify-center gap-3 pt-2">
+          <button type="submit"
+            class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-[#e8383b] text-white font-semibold shadow hover:opacity-90">
+            Send request
+          </button>
+          <a href="tel:+198384739374"
+            class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-white text-[#e8383b] border border-[#e8383b] font-semibold shadow hover:bg-[#fff5f3] text-center">
+            Call now
+          </a>
+          <a href="https://wa.me/198384739374?text=Hi%20Vinny%E2%80%99s%20Beach%20Bar%2C%20I%20want%20to%20reserve..."
+            target="_blank" rel="noopener"
+            class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-white text-[#e8383b] border border-[#e8383b] font-semibold shadow hover:bg-[#fff5f3] text-center">
+            WhatsApp
+          </a>
+          <a href="https://maps.google.com/?q=Vinny's Beach Bar" target="_blank" rel="noopener"
+            class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-white text-[#e8383b] border border-[#e8383b] font-semibold shadow hover:bg-[#fff5f3] text-center">
+            Get directions
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <!-- tiny JS: build mailto from form (no backend) -->
+  <script>
+  (() => {
+    const f = document.getElementById('reserveForm');
+    if(!f) return;
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(f).entries());
+      const subject = `Reservation ${d.date || ''} ${d.time || ''} for ${d.size || ''}`;
+      const body = [
+        `Name: ${d.name || ''}`,
+        `Phone: ${d.phone || ''}`,
+        `Date: ${d.date || ''}`,
+        `Time: ${d.time || ''}`,
+        `Party size: ${d.size || ''}`,
+        `Occasion: ${d.occasion || '-'}`,
+        ``,
+        `Notes:`,
+        `${d.notes || '-'}`,
+      ].join('\\n');
+      window.location.href =
+        `mailto:reserve@vinnysbar.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  })();
+  </script>
+  

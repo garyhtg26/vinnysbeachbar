@@ -1,0 +1,21 @@
+<!-- GALLERY -->
+<section id="gallery" class="py-16 bg-dot-sand overflow-x-clip">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-[#e8383b] mb-8 text-center">gallery.</h2>
+  
+      <!-- Masonry via CSS columns -->
+      <div class="columns-2 md:columns-3 gap-3 [column-fill:balance]">
+        {% assign pics = "vintage-1.png,vintage-2.png,vintage-3.png,vintage-4.png,vintage-5.png,vintage-6.png,vintage-7.png,vintage-8.png" | split: "," %}
+        {% for p in pics %}
+        <figure class="mb-3 overflow-hidden rounded-2xl shadow [break-inside:avoid]">
+          <img
+            src="{{ '/images/' | append: p | relative_url }}"
+            alt=""
+            class="block w-full h-auto transition-transform duration-300 hover:scale-[1.02]"
+          >
+        </figure>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  

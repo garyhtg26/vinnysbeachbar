@@ -5,10 +5,8 @@
   box-sizing: border-box;
 }
 
-html {
-  @apply border-8 sm:border-blue md:border-purple lg:border-pink;
-}
-
+body { overflow-x: hidden; }        
+img, video { display: block; }  
 
 /* Re-usable Utiity Classes  */
 
@@ -271,3 +269,4 @@ mix-blend-mode:multiply;
   }
 }
 .vb-logo{ width:min(800px,92vw); height:auto; }
+
