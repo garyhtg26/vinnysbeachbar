@@ -1,32 +1,125 @@
-<section class="grid grid-cols-12 gap-0">
-  <!-- Left: Skate crowd -->
-  <div
-    class="col-span-12 md:col-span-4 relative bg-image bg-skate min-h-[60vh]"
-  >
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent md:from-transparent"
-    ></div>
-    <div
-      class="relative h-full flex items-start md:items-center justify-end md:justify-start p-8"
-    >
-      <h2
-        class="leading-[2.5rem] text-3xl md:text-4xl dark-text text-left md:text-right"
-      >
-        drinks. <br />
-        food. <br />
-        vibes.
-      </h2>
+<!-- ========== UPCOMING EVENTS (HTML only) ========== -->
+<section id="events" class="relative overflow-hidden py-16 md:py-20 bg-[#f6efe7]">
+
+  <!-- FOREGROUND TITLE -->
+  <h2 class="text-4xl md:text-5xl font-extrabold text-[#e8383b] mb-16 text-center">Upcoming Event.</h2>
+      
+
+  <!-- BACKGROUND MARQUEE TEXT (butuh keyframes marqueeL/marqueeR di CSS kamu) -->
+  <div class="pointer-events-none absolute inset-0 z-0 select-none">
+    <!-- row 1 (to right) -->
+    <div class="absolute top-4 md:top-8 left-0 right-0 overflow-hidden">
+      <div class="will-change-transform whitespace-nowrap flex gap-16 text-[#e8383b]/15 font-extrabold uppercase
+                  text-[10vw] leading-none animate-[marqueeR_20s_linear_infinite]">
+        <span>UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;</span>
+        <span aria-hidden="true">UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;</span>
+      </div>
+    </div>
+    <!-- row 2 (to left) -->
+    <div class="absolute top-1/2 -translate-y-1/2 left-0 right-0 overflow-hidden">
+      <div class="will-change-transform whitespace-nowrap flex gap-16 text-[#e8383b]/10 font-extrabold uppercase
+                  text-[12vw] leading-none animate-[marqueeL_22s_linear_infinite]">
+        <span>UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;</span>
+        <span aria-hidden="true">UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;</span>
+      </div>
+    </div>
+    <!-- row 3 (to right) -->
+    <div class="absolute bottom-2 md:bottom-6 left-0 right-0 overflow-hidden">
+      <div class="will-change-transform whitespace-nowrap flex gap-16 text-[#e8383b]/15 font-extrabold uppercase
+                  text-[10vw] leading-none animate-[marqueeR_24s_linear_infinite]">
+        <span>UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;</span>
+        <span aria-hidden="true">UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;UPCOMING EVENTS&nbsp;&nbsp;</span>
+      </div>
     </div>
   </div>
 
-  <!-- Right: Teal palm trees with better focal crop -->
-  <div
-    class="col-span-12 md:col-span-8 relative bg-image bg-trees min-h-[60vh] bg-bottom md:bg-[position:center_38%]"
-  >
-    <div class="relative h-full flex items-end justify-end p-8">
-      <h2 class="sm:text-lg dark-text text-right">
-        5pm – late <span>everyday.</span>
-      </h2>
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-7xl mx-auto px-12 md:px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-7 items-stretch">
+
+      <!-- CARD 1 -->
+      <article class="h-full flex flex-col rounded-[28px] overflow-hidden shadow-xl bg-transparent">
+        <!-- bigger image area -->
+        <div class="relative w-full h-full pb-[100%]">
+          <img src="{{ '/images/event-6.jpg' | relative_url }}" alt="New Year's Eve 2025"
+               class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <!-- compact details -->
+        <div class="bg-[#282525] text-white p-4 md:p-5">
+          <div class="grid grid-cols-[56px_1fr] gap-3 items-start">
+            <div class="bg-[#3a2f2b] rounded-xl px-2.5 py-2 leading-none text-center">
+              <div class="date-num font-black">31</div>
+              <div class="date-mon uppercase tracking-widest opacity-80 -mt-0.5">Dec</div>
+            </div>
+            <div>
+              <h3 class="event-title font-extrabold uppercase">New Year's Eve 2025</h3>
+              <p class="mt-1 text-sm opacity-90">DJs all night.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="h-full flex flex-col rounded-[28px] overflow-hidden shadow-xl bg-transparent">
+        <div class="relative w-full h-full pb-[100%]">
+          <img src="{{ '/images/event-7.jpg' | relative_url }}" alt="Tuesday Party"
+               class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <div class="bg-[#282525] text-white p-4 md:p-5">
+          <div class="grid grid-cols-[56px_1fr] gap-3 items-start">
+            <div class="bg-[#3a2f2b] rounded-xl px-2.5 py-2 leading-none text-center">
+              <div class="date-num font-black">11</div>
+              <div class="date-mon uppercase tracking-widest opacity-80 -mt-0.5">Nov</div>
+            </div>
+            <div>
+              <h3 class="event-title font-extrabold uppercase">Tuesday</h3>
+              <p class="event-desc mt-1 opacity-90">All-day party, 2-for-1 Happy Hour, live DJs &amp; singers.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="h-full flex flex-col rounded-[28px] overflow-hidden shadow-xl bg-transparent">
+        <div class="relative w-full h-full pb-[100%]">
+          <img src="{{ '/images/event-8.jpg' | relative_url }}" alt="Wednesday Beach Vibes"
+               class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <div class="bg-[#282525] text-white p-4 md:p-5">
+          <div class="grid grid-cols-[56px_1fr] gap-3 items-start">
+            <div class="bg-[#3a2f2b] rounded-xl px-2.5 py-2 leading-none text-center">
+              <div class="date-num font-black">12</div>
+              <div class="date-mon uppercase tracking-widest opacity-80 -mt-0.5">Nov</div>
+            </div>
+            <div>
+              <h3 class="event-title font-extrabold uppercase">Wednesday</h3>
+              <p class="event-desc mt-1 opacity-90">Beach vibes: live percussion, guest DJ.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 4 -->
+      <article class="h-full flex flex-col rounded-[28px] overflow-hidden shadow-xl bg-transparent">
+        <div class="relative w-full h-full pb-[100%]">
+          <img src="{{ '/images/event-9.jpg' | relative_url }}" alt="Thursday Night"
+               class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <div class="bg-[#282525] text-white p-4 md:p-5">
+          <div class="grid grid-cols-[56px_1fr] gap-3 items-start">
+            <div class="bg-[#3a2f2b] rounded-xl px-2.5 py-2 leading-none text-center">
+              <div class="date-num font-black">13</div>
+              <div class="date-mon uppercase tracking-widest opacity-80 -mt-0.5">Nov</div>
+            </div>
+            <div>
+              <h3 class="event-title font-extrabold uppercase">Thursday</h3>
+              <p class="event-desc mt-1 opacity-90">2-for-1 Happy Hour, dance crew showcase, late close.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
+<!-- ========== /UPCOMING EVENTS ========== -->
