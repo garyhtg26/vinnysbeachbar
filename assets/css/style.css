@@ -152,7 +152,7 @@ footer h2 {
   background-repeat: no-repeat;
 }
 
-.bg-footer {background-image: url('/images/vintage-1.png')}
+.bg-footer {background-image: url('/images/footer.jpg')}
 .bg-point {background-image: url('/images/vintage-2.png')}
 .bg-hotdog {background-image: url('/images/vintage-3.png')}
 .bg-trees {background-image: url('/images/vintage-4.png')}
@@ -271,37 +271,37 @@ mix-blend-mode:multiply;
 .vb-logo{ width:min(800px,92vw); height:auto; }
 
 
-  /* Pastikan setiap card jadi grid 2-baris: gambar (1fr) + bar teks (auto) */
+
   #events article{
     display:grid;
     grid-template-rows: 1fr auto;
     height:100%;
-    overflow:hidden;           /* biar radius ngebungkus rapih */
-    border-radius:28px;        /* samakan dengan yang dipakai di HTML */
-    background: transparent;   /* no white card! */
+    overflow:hidden;           
+    border-radius:28px;        
+    background: transparent;  
   }
 
-  /* Gambar isi penuh area atas */
+
   #events article > :first-child{
     position:relative;
-    min-height:0;              /* penting untuk grid children */
+    min-height:0;             
   }
   #events article > :first-child img{
     display:block;
     width:100%;
     height:100%;
     object-fit:cover;
-    aspect-ratio: 16 / 10;     /* bikin foto dominan; ubah ke 16/11 kalau mau lebih tinggi */
+    aspect-ratio: 16 / 10;     
   }
 
-  /* Bar teks selalu nempel bawah card */
+
   #events article > :last-child{
-    margin-top:auto;           /* jaga-jaga kalau bukan grid */
-    border-top-left-radius:0;  /* hilangkan gap di sudut */
+    margin-top:auto;          
+    border-top-left-radius:0;  
     border-top-right-radius:0;
   }
 
-  /* Typo size kecil seperti request */
+ 
   #events .event-title{ font-size: clamp(16px, 1.6vw, 20px); line-height:1.12; }
   #events .event-desc { font-size: clamp(12px, 1.2vw, 14px); }
   #events .date-num   { font-size: clamp(18px, 2.2vw, 24px); font-weight: 900; }
